@@ -8,12 +8,15 @@
 //5. Variables/named function constants are initialised as undefined , where function are whole definition itself.
 
 
-let a = 2;
+var a = 2;
 
-function square(args) {
-    var num = args * args;
-    return num;
+function getTwiceTheNumber(num) {
+    a = num * 2;
+    console.log(a);
+    return a;
 }
 
-var b = square(a);
-var c = square(5);
+var b = 5;
+
+getTwiceTheNumber(a);
+getTwiceTheNumber(5);
