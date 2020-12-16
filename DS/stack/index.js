@@ -45,4 +45,8 @@ stack1.push(5);
 
 console.log(stack1);
 
+stack1.pop();
+
+console.log(stack1);
+
 console.log(stack1.peek());
