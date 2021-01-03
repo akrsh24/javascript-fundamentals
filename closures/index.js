@@ -44,9 +44,20 @@
 //     }
 // }
 
+// function x() {
+//     for (var i = 1; i <= 5; i++) {
+//         // now fn close creates a closure and its remembers its parent lex env. Each call to close has different scope and different value in parent lex so now it work.
+//         ((j) => setTimeout(() => {
+//             console.log(j);
+//         }, j * 1000))(i);
+//     }
+// }
+
+// x();
+
+
 function x() {
     for (var i = 1; i <= 5; i++) {
-        // now fn close creates a closure and its remembers its parent lex env. Each call to close has different scope and different value in parent lex so now it work.
         ((j) => setTimeout(() => {
             console.log(j);
         }, j * 1000))(i);
