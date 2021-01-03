@@ -56,12 +56,87 @@
 // x();
 
 
-function x() {
-    for (var i = 1; i <= 5; i++) {
-        ((j) => setTimeout(() => {
-            console.log(j);
-        }, j * 1000))(i);
+// function x() {
+//     for (var i = 1; i <= 5; i++) {
+//         ((j) => setTimeout(() => {
+//             console.log(j);
+//         }, j * 1000))(i);
+//     }
+// }
+
+// x();
+
+
+// document.getElementById("myClick")
+//     .addEventListener('click', function () {
+//         console.log("Clicked");
+//     });
+
+
+// function giveCount() {
+//     let count = 0;
+//     return function getCount() {
+//         console.log("Clicked->", count++);
+//     }
+// }
+
+// document.getElementById("myClick")
+//     .addEventListener('click', giveCount());
+
+// function attachEventListener() {
+//     let count = 0;
+//     document.getElementById("myClick")
+//         .addEventListener('click', function () {
+//             console.log("Clicked Button->", ++count);
+//         });
+// }
+
+// attachEventListener();
+
+
+// eventListener are registered once and all, and after in the above eg, the getCount() function is being called again and again. 
+// that's why count is always incrementing and not registered again and again to zero. 
+//closures for data hiding
+
+
+//setTimeout issue with closure
+
+// 1. by let block scope
+
+for (let i = 0; i < 10; i++) {
+    console.log("Loop starts->", i);
+    function loop() {
+        setTimeout(() => {
+            console.log(i);
+        }, i)
     }
+    console.log("Loop ends->", i);
+    loop();
 }
 
-x();
+//OR
+
+//2. By closure
+
+// for (var i = 0; i < 10; i++) {
+//     function closedLoop() {
+//         return function loop(j) {
+//             setTimeout(() => {
+//                 console.log(j);
+//             }, j * 1000);
+//         }
+//     }
+//     closedLoop()(i);
+// }
+
+//3. By IIFE and closure
+
+// for (var i = 0; i < 10; i++) {
+//     (() => {
+//         return function (j) {
+//             setTimeout(() => {
+//                 console.log(j);
+//             }, j * 1000);
+//         }
+//     })()(i);
+// }
