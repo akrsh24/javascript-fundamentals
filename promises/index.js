@@ -43,22 +43,33 @@ let promiseFunction = new Promise((resolve, reject) => {
 
 //----async and timer-----
 
-async function setTimer() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Hello");
-        }, 3000)
-    });
+// async function setTimer() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Hello");
+//         }, 3000)
+//     });
+// }
+
+// async function getTimer() {
+//     try {
+//         let timerData = await setTimer();
+//         console.table(timerData);
+//     }
+//     catch (error) {
+//         console.error(error);
+//     }
+// }
+
+// getTimer();
+
+const set = () => {
+    console.log("Arrow->", this);
 }
 
-async function getTimer() {
-    try {
-        let timerData = await setTimer();
-        console.table(timerData);
-    }
-    catch (error) {
-        console.error(error);
-    }
+function get() {
+    console.log("Normal->", this);
 }
 
-getTimer();
+set();
+get();
