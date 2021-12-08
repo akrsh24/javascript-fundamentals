@@ -1,1 +1,1 @@
-# javacript-fundamentals
+# javascript-fundamentals
